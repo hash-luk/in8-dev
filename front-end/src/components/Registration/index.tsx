@@ -46,7 +46,6 @@ export default function Registration() {
         <div>
           <label htmlFor="">Telefone</label>
           <InputMask mask={"(99) 9 9999-9999"} onChange={e => setTelephone(e.target.value)}/>
-          {/* <input type="number" name="phone" id="phone-input" autoComplete="off" onChange={e => setTelephone(e.target.value)}/> */}
         </div>
       </form>
 

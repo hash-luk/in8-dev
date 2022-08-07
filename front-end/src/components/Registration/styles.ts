@@ -34,6 +34,7 @@ export const Container = styled.div`
       font-weight: 400;
       color: #fff;
       margin-bottom: 20px;
+      position: relative;
 
       label {
         margin-bottom: 10px;
@@ -47,6 +48,7 @@ export const Container = styled.div`
         color: #fff;
         padding-bottom: 2px;
         font-family: "Helvetica Condensed", sans-serif;
+        outline: none;
 
         :focus {
           outline: none;
@@ -57,7 +59,6 @@ export const Container = styled.div`
           filter: invert(1);
         }
       }
-
       #phone-input {
         ::-webkit-outer-spin-button,
         ::-webkit-inner-spin-button {
