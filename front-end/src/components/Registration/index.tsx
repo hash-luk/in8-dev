@@ -11,13 +11,18 @@ export default function Registration() {
   async function handleSubmit(event : FormEvent) {
     event.preventDefault();
 
-    await api.post('/user', {
-      name,
-      email,
-      nascimento,
-      telephone
-    })
+    if(!name || !email || !nascimento || !telephone) {
+      alert('Preencha todos os campos');
+    } else {
+      await api.post('/user', {
+        name,
+        email,
+        nascimento,
+        telephone
+      })
 
+      alert('Cadastro realizado com sucesso! Atualize a página para visualizar os dados.');
+    }  
   }
 
   return (

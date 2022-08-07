@@ -15,23 +15,11 @@ import MobileTable from "../Mobile-Table";
 export default function DataTable() {
   let id = 1;
   const [data, setData] = useState([{}]);
-  const [title, setTitle] = useState(``);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth);
-    });
 
-    if (windowWidth <= 500) {
-      setTitle(`Lista de <br /> cadastros`);
-    } else {
-      setTitle(`Lista de cadastros`);
-    }
-  });
-
-  async function getData() {
-    await api.get("/users").then((response) => {
+  function getData() {
+    api.get("/users").then((response) => {
       setData(response.data);
     });
   }
@@ -39,6 +27,7 @@ export default function DataTable() {
   useEffect(() => {
     getData();
   }, []);
+
 
   function backToTop() {
     window.scrollTo({
