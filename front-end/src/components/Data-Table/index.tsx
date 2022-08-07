@@ -21,6 +21,8 @@ export default function DataTable() {
   function getData() {
     api.get("/users").then((response) => {
       setData(response.data);
+    }).catch((error) => {
+      alert(error.message);
     });
   }
 
