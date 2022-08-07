@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import InputMask from 'react-input-mask';
 import api from "../../libs/api";
 import * as S from "./styles";
 
@@ -44,7 +45,8 @@ export default function Registration() {
         </div>
         <div>
           <label htmlFor="">Telefone</label>
-          <input type="number" name="phone" id="phone-input" autoComplete="off" onChange={e => setTelephone(e.target.value)}/>
+          <InputMask mask={"(99) 9 9999-9999"} onChange={e => setTelephone(e.target.value)}/>
+          {/* <input type="number" name="phone" id="phone-input" autoComplete="off" onChange={e => setTelephone(e.target.value)}/> */}
         </div>
       </form>
 
